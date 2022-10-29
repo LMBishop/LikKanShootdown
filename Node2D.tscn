@@ -7,17 +7,15 @@
 
 [node name="Node" type="Node"]
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Node2D"]
-position = Vector2( 149, 52 )
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 299, 140 )
 input_pickable = true
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="Node2D/KinematicBody2D/CollisionShape2D"]
+[node name="Sprite" type="Sprite" parent="KinematicBody2D/CollisionShape2D"]
 position = Vector2( -15.5, -15 )
 scale = Vector2( 0.515625, 0.53125 )
 texture = ExtResource( 1 )
