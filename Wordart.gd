@@ -5,4 +5,5 @@ func _ready():
 
 func _on_player_dead():
 	visible = true
+	$AudioStreamPlayer.play()
 	get_tree().paused = true

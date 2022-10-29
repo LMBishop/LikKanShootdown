@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://Wordart.gd" type="Script" id=2]
 [ext_resource path="res://assets/wordart.png" type="Texture" id=3]
+[ext_resource path="res://assets/preview_4.mp3" type="AudioStream" id=4]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -46,3 +47,7 @@ position = Vector2( 626, 372 )
 scale = Vector2( 0.171967, 0.186029 )
 texture = ExtResource( 3 )
 script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Wordart"]
+pause_mode = 2
+stream = ExtResource( 4 )
