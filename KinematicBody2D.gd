@@ -34,5 +34,5 @@ func _physics_process(delta):
 		get_owner().add_child(obj)
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
-		if not "Bullet" in body.get_name():
+		if body.get_name() != "Bullet":
 			emit_signal("hit", delta)
