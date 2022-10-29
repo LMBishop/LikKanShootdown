@@ -14,4 +14,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	move_and_collide(global_position.direction_to(globals.playerPos).normalized() * 1000 * delta)
+	move_and_collide(global_position.direction_to(globals.playerPos).normalized() * 300 * delta)
