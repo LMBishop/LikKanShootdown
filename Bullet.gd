@@ -3,7 +3,7 @@ export (int) var speed = 2000
 
 var velocity = Vector2()
 var target = Vector2.ZERO
-var player = load("")
+#var player = load("")
 var shot = false;
 func get_input():
 	velocity = Vector2()
