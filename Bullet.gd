@@ -5,7 +5,10 @@ var velocity = Vector2()
 var target = Vector2.ZERO
 #var player = load("")
 var shot = false;
+var screen_size
 
+func _ready():
+	screen_size = get_viewport_rect().size
 
 func _physics_process(delta):
 	target = get_global_mouse_position()
@@ -18,6 +21,8 @@ func _physics_process(delta):
 		if collision.collider:
 			collision.collider.free()
 	if velocity == Vector2(0.0, 0.0):
+		queue_free()
+	if position.x > screen_size.x or position.x < 0 or position.y > screen_size.y or position.y < 0:
 		queue_free()
 
 

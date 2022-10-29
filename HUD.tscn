@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HealthBar.gd" type="Script" id=1]
+[ext_resource path="res://Wordart.gd" type="Script" id=2]
+[ext_resource path="res://assets/wordart.png" type="Texture" id=3]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -38,3 +40,9 @@ margin_left = 1272.0
 margin_right = 1280.0
 margin_bottom = 14.0
 text = "0"
+
+[node name="Wordart" type="Sprite" parent="."]
+position = Vector2( 626, 372 )
+scale = Vector2( 0.171967, 0.186029 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
