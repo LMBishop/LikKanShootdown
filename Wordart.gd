@@ -5,3 +5,4 @@ func _ready():
 
 func _on_player_dead():
 	visible = true
+	get_tree().paused = true
