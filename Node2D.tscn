@@ -15,11 +15,11 @@ _data = {
 script = ExtResource( 3 )
 enemy_scene = ExtResource( 5 )
 
+[node name="Bullet" parent="." instance=ExtResource( 4 )]
+position = Vector2( 548, 225 )
+
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 544, 216 )
-
-[node name="Bullet" parent="KinematicBody2D" instance=ExtResource( 4 )]
-position = Vector2( 4, 9 )
 
 [node name="Node" type="Node" parent="."]
 

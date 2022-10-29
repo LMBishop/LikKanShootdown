@@ -18,15 +18,10 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
-	
-
-
 	get_input()
 	globals.playerPos = global_position
 	velocity = move_and_slide(velocity)
 	if Input.is_action_just_pressed("click"):
 		var obj = spawn_object.instance()
 		obj.position = get_position()
-		obj.position.x -= 500		
-		obj.position.y -= 250
-		add_child(obj)
+		get_owner().add_child(obj)
