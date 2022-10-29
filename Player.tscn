@@ -15,5 +15,3 @@ shape = SubResource( 1 )
 position = Vector2( -1, -4 )
 scale = Vector2( 0.515625, 0.53125 )
 texture = ExtResource( 2 )
-
-[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
