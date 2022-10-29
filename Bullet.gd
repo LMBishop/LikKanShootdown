@@ -1,9 +1,10 @@
 extends KinematicBody2D
+export (int) var speed = 2000
 
-export (int) var speed = 200
-var spawn_object = load("res://Bullet.tscn")
 var velocity = Vector2()
-
+var target = Vector2.ZERO
+var player = load("")
+var shot = false;
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed("right"):
@@ -14,17 +15,23 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1
+
 	velocity = velocity.normalized() * speed
 
+
+
+
 func _physics_process(delta):
-	
 
 
-	get_input()
+
+
+	target = get_global_mouse_position()
+	if(Input.is_action_pressed("click")  && shot == false):
+		velocity = global_position.direction_to(target) * speed
+		shot = true
 	velocity = move_and_slide(velocity)
-	if Input.is_action_just_pressed("click"):
-		var obj = spawn_object.instance()
-		obj.position = get_position()
-		obj.position.x -= 500		
-		obj.position.y -= 250
-		add_child(obj)
+
+
+
+
