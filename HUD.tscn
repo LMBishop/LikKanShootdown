@@ -1,6 +1,6 @@
 [gd_scene format=2]
 
-[node name="Control" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_top = 1.0
