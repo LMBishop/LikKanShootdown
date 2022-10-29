@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 var spawn_object = load("res://Bullet.tscn")
 var velocity = Vector2()
+onready var globals = get_node("/root/Global")
 
 func get_input():
 	velocity = Vector2()
@@ -21,6 +22,7 @@ func _physics_process(delta):
 
 
 	get_input()
+	globals.playerPos = global_position
 	velocity = move_and_slide(velocity)
 	if Input.is_action_just_pressed("click"):
 		var obj = spawn_object.instance()

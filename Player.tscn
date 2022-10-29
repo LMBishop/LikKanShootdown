@@ -6,7 +6,6 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 299, 140 )
 input_pickable = true
 script = ExtResource( 1 )
 
