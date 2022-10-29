@@ -16,3 +16,5 @@ func _ready():
 #	pass
 func _on_player_hit(delta):
 	value -= delta * 20
+	if value == 0:
+		emit_signal("player_dead")
