@@ -2,7 +2,7 @@ extends Area2D
 
 signal hit
 var screen_size
-export (int) var speed = 200
+export (int) var speed = 500
 var spawn_object = load("res://Bullet.tscn")
 var velocity = Vector2()
 onready var globals = get_node("/root/Global")
