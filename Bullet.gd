@@ -13,7 +13,12 @@ func _physics_process(delta):
 		velocity = global_position.direction_to(target) * speed
 		shot = true
 	velocity = move_and_slide(velocity)
-
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider:
+			collision.collider.free()
+	if velocity == Vector2(0.0, 0.0):
+		queue_free()
 
 
 
