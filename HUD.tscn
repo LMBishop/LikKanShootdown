@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://HealthBar.gd" type="Script" id=1]
 [ext_resource path="res://Wordart.gd" type="Script" id=2]
 [ext_resource path="res://assets/wordart.png" type="Texture" id=3]
 [ext_resource path="res://assets/preview_4.tres" type="AudioStream" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 1, 0, 1 )
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -27,6 +30,7 @@ margin_right = 1205.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/fg = SubResource( 1 )
 value = 100.0
 script = ExtResource( 1 )
 
