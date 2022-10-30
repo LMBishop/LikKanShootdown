@@ -3,7 +3,7 @@
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/htm_tex.png" type="Texture" id=2]
 
-[node name="Area2D" type="Area2D"]
+[node name="Player" type="Area2D"]
 collision_mask = 3
 script = ExtResource( 1 )
 

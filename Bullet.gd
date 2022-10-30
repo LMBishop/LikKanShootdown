@@ -26,6 +26,3 @@ func _physics_process(delta):
 		queue_free()
 	if position.x > screen_size.x or position.x < 0 or position.y > screen_size.y or position.y < 0:
 		queue_free()
-
-
-
