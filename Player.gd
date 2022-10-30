@@ -29,6 +29,7 @@ func _physics_process(delta):
 	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+	rotation = global_position.angle_to_point(get_global_mouse_position()) + PI + PI / 8 # extra /8 to offset TeX's snout
 	if Input.is_action_just_pressed("click"):
 		var obj = spawn_object.instance()
 		obj.position = get_position()
