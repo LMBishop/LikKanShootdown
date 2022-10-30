@@ -17,7 +17,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		if collision.collider:
+		if collision.collider and "Enemy" in collision.collider.get_name():
 			collision.collider.free()
 	if velocity == Vector2(0.0, 0.0):
 		queue_free()
