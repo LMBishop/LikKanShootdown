@@ -8,7 +8,6 @@ func _ready():
 	get_node("Player").connect("hit", get_node("HUD/HBoxContainer/HealthBar"), "_on_player_hit")
 	get_node("Player").connect("coin", get_node("HUD/HBoxContainer/CoinCount"), "_on_coin_hit")
 	get_node("Player").connect("coin", get_node("HUD/GameOver/GameOverCoinMessage/GameOverCoinCount"), "_on_coin_hit")
-	yield(get_tree().create_timer(15.0), "timeout")
 	$EnemySpawnTimer.start()
 
 func _on_EnemySpawnTimer_timeout():
