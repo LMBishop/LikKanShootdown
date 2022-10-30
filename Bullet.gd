@@ -3,7 +3,7 @@ export (int) var speed = 2000
 
 var velocity = Vector2()
 var target = Vector2.ZERO
-#var player = load("")
+var spawn_object = load("res://Coin.tscn")
 var shot = false;
 var screen_size
 
@@ -17,7 +17,10 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity)
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		if collision.collider and "Enemy" in collision.collider.get_name():
+		if collision.collider:
+			var obj = spawn_object.instance()
+			obj.position = collision.collider.position
+			get_parent().add_child(obj)
 			collision.collider.free()
 	if velocity == Vector2(0.0, 0.0):
 		queue_free()

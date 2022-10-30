@@ -1,6 +1,7 @@
 extends Area2D
 
 signal hit
+signal coin
 var screen_size
 export (int) var speed = 500
 var spawn_object = load("res://Bullet.tscn")
@@ -31,8 +32,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("click"):
 		var obj = spawn_object.instance()
 		obj.position = get_position()
-		get_owner().add_child(obj)
+		get_parent().add_child(obj)
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
-		if not "Bullet" in body.get_name():
+		if "Coin" in body.get_name():
+			emit_signal("coin")
+			body.free()
+		elif "Enemy" in body.get_name():
 			emit_signal("hit", delta)

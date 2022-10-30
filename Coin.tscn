@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/super_duper_meage_super_duper_coin.png" type="Texture" id=1]
+[ext_resource path="res://Coin.gd" type="Script" id=2]
+
+[node name="Coin" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+polygon = PoolVector2Array( 39.5, -114.6, 42.5, -101, 79.5, -101, 79.5, -95.6, 81.1, -82.3, 100.5, -78, 100.5, -62, 115.6, -62, 120.5, -57.1, 120.5, -23.2, 139.5, -19, 139.5, 41, 134.2, 41, 120.5, 44, 120.5, 79.1, 100.5, 83.1, 100.5, 97.1, 95.6, 102, 80.4, 102, 79.2, 121, 41.4, 121, 39.1, 125, -41.5, 125, -41.5, 123.6, -43.2, 121, -80.5, 121, -80.5, 115.7, -83.5, 102, -96.6, 102, -101.5, 97.1, -101.5, 82, -115.6, 82, -120.5, 77.1, -120.5, 44.3, -141.5, 40.1, -141.5, -20, -136, -20, -121.5, -23.1, -121.5, -59.5, -102.8, -61.6, -98.5, -81, -82.5, -81, -82.5, -96.1, -77.6, -101, -44.5, -101, -41.5, -114.6, -41.5, -120, 39.5, -120 )
