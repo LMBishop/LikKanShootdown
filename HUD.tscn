@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://HealthBar.gd" type="Script" id=1]
-[ext_resource path="res://Wordart.gd" type="Script" id=2]
+[ext_resource path="res://GameOver.gd" type="Script" id=2]
 [ext_resource path="res://assets/wordart.png" type="Texture" id=3]
 [ext_resource path="res://assets/preview_4.tres" type="AudioStream" id=4]
-[ext_resource path="res://Money.gd" type="Script" id=5]
-[ext_resource path="res://Label2.gd" type="Script" id=6]
+[ext_resource path="res://CoinCount.gd" type="Script" id=5]
 [ext_resource path="res://assets/MinecraftRegular-Bmg3.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/wordart(1).png" type="Texture" id=8]
 
@@ -54,25 +53,25 @@ margin_right = 1262.0
 margin_bottom = 14.0
 text = "Coins:"
 
-[node name="Money" type="Label" parent="HBoxContainer"]
+[node name="CoinCount" type="Label" parent="HBoxContainer"]
 margin_left = 1272.0
 margin_right = 1280.0
 margin_bottom = 14.0
 text = "0"
 script = ExtResource( 5 )
 
-[node name="Wordart" type="Sprite" parent="."]
+[node name="GameOver" type="Sprite" parent="."]
 position = Vector2( 626, 246 )
 scale = Vector2( 0.171967, 0.186029 )
 texture = ExtResource( 3 )
 script = ExtResource( 2 )
 
-[node name="Wordart(1)" type="Sprite" parent="Wordart"]
+[node name="GameOverCoinMessage" type="Sprite" parent="GameOver"]
 position = Vector2( -488.465, 1451.39 )
 scale = Vector2( 0.639108, 0.832261 )
 texture = ExtResource( 8 )
 
-[node name="Label" type="Label" parent="Wordart/Wordart(1)"]
+[node name="GameOverCoinCount" type="Label" parent="GameOver/GameOverCoinMessage"]
 margin_left = 3885.16
 margin_top = -219.604
 margin_right = 5987.16
@@ -80,8 +79,8 @@ margin_bottom = 983.396
 custom_fonts/font = SubResource( 3 )
 text = "0
 "
-script = ExtResource( 6 )
+script = ExtResource( 5 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Wordart"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GameOver"]
 pause_mode = 2
 stream = ExtResource( 4 )
